@@ -8,6 +8,10 @@ The Autonomous Clinical Trial Designer is an intelligent application that stream
 
 Whether you're a researcher, clinician, or pharmaceutical professional, this application transforms a weeks-long manual process into an automated workflow that delivers comprehensive, structured trial designs in minutes.
 
+## 🚀 Live Demo
+
+Try the application now: **[Clinical Researcher Agent](https://clinical-researcher-agent.streamlit.app/)**
+
 ## Key Features
 
 - **Multi-Agent Orchestration**: Nine specialized AI agents work sequentially to handle different aspects of trial design
