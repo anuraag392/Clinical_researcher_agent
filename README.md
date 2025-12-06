@@ -10,13 +10,13 @@ Whether you're a researcher, clinician, or pharmaceutical professional, this app
 
 ## Key Features
 
-- **🤖 Multi-Agent Orchestration**: Nine specialized AI agents work sequentially to handle different aspects of trial design
-- **📚 Literature-Informed Design**: Automatic synthesis of relevant research to inform trial parameters
-- **📊 Statistical Rigor**: Automated sample size calculations and endpoint definitions
-- **⚖️ Ethics & Compliance**: Built-in ethical considerations and regulatory guidance
-- **🎯 Feasibility Assessment**: Real-world implementation analysis
-- **💻 Dual Interface**: Both command-line and web-based Streamlit interface
-- **📝 Structured Reports**: Generate comprehensive, well-formatted clinical trial design documents
+- **Multi-Agent Orchestration**: Nine specialized AI agents work sequentially to handle different aspects of trial design
+- **Literature-Informed Design**: Automatic synthesis of relevant research to inform trial parameters
+- **Statistical Rigor**: Automated sample size calculations and endpoint definitions
+- **Ethics & Compliance**: Built-in ethical considerations and regulatory guidance
+- **Feasibility Assessment**: Real-world implementation analysis
+- **Dual Interface**: Both command-line and web-based Streamlit interface
+- **Structured Reports**: Generate comprehensive, well-formatted clinical trial design documents
 
 ## How It Works
 
@@ -150,4 +150,4 @@ For questions, issues, or feedback, please contact the developer.
 
 ---
 
-**Built with ❤️ using AI-powered automation**
+**Built by Anuraag Das**
