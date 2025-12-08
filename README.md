@@ -8,7 +8,7 @@ The Autonomous Clinical Trial Designer is an intelligent application that stream
 
 Whether you're a researcher, clinician, or pharmaceutical professional, this application transforms a weeks-long manual process into an automated workflow that delivers comprehensive, structured trial designs in minutes.
 
-## 🚀 Live Demo
+## Live Demo
 
 Try the application now: **[Clinical Researcher Agent](https://clinical-researcher-agent.streamlit.app/)**
 
@@ -121,7 +121,7 @@ autonomous_clinical_trial_designer/
 
 -   **LangChain**: LLM application framework
 -   **LangGraph**: Workflow orchestration and state management
--   **Google Gemini**: Large language model for text generation
+-   **llama-3.3-70b-versatile**: Large language model for text generation
 -   **Streamlit**: Web interface framework
 -   **Python 3.8+**: Core programming language
 

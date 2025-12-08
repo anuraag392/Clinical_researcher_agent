@@ -14,8 +14,8 @@ st.set_page_config(
 st.title("Autonomous Clinical Trial Designer")
 st.markdown("Design comprehensive clinical trials using AI-powered workflow automation")
 
-if not os.getenv("GOOGLE_API_KEY"):
-    st.error("GOOGLE_API_KEY not found. Please add it to your .env file.")
+if not os.getenv("GROQ_API_KEY"):
+    st.error("GROQ_API_KEY not found. Please add it to your .env file.")
     st.stop()
 
 with st.sidebar:
@@ -61,30 +61,37 @@ if st.button("Generate Trial Design", type="primary", use_container_width=True):
         progress_bar = st.progress(0)
         status_text = st.empty()
         
-        agents = [
-            "Intake Analysis",
-            "Literature Review",
-            "Trial Design",
-            "Eligibility Criteria",
-            "Endpoints Definition",
-            "Sample Size Calculation",
-            "Ethics Considerations",
-            "Feasibility Assessment",
-            "Final Report Generation"
-        ]
+        agent_names = {
+            "intake": "Intake Analysis",
+            "literature": "Literature Review",
+            "design": "Trial Design",
+            "eligibility": "Eligibility Criteria",
+            "endpoints": "Endpoints Definition",
+            "samplesize": "Sample Size Calculation",
+            "ethics": "Ethics Considerations",
+            "feasibility": "Feasibility Assessment",
+            "report": "Final Report Generation"
+        }
         
-        with st.spinner("Processing your request..."):
-            graph = create_graph()
-            
-            for i, agent in enumerate(agents):
-                progress = (i + 1) / len(agents)
+        total_agents = len(agent_names)
+        completed_agents = 0
+        
+        graph = create_graph()
+        
+        final_state = None
+        for event in graph.stream(initial_state):
+            for node_name, node_output in event.items():
+                completed_agents += 1
+                progress = completed_agents / total_agents
                 progress_bar.progress(progress)
-                status_text.text(f"⚙️ {agent}...")
-            
-            final_state = graph.invoke(initial_state)
-            
-            progress_bar.progress(1.0)
-            status_text.text("✅ Complete!")
+                
+                agent_display_name = agent_names.get(node_name, node_name)
+                status_text.text(f"⚙️ {agent_display_name}...")
+                
+                final_state = node_output
+        
+        progress_bar.progress(1.0)
+        status_text.text("✅ Complete!")
         
         st.success("Clinical trial design generated successfully!")
         
